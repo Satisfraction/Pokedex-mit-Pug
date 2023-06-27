@@ -165,17 +165,16 @@ block cards
 
 
     div.pokedex
-        each element in data 
-
-            div.container
+        div.container
+            each element in data
                 div.card
                     img(src= element.Bild, alt="")
                     table 
                         tr 
                             th 
                                 p= element.Nr
-                                h1.cardtext= element.Name
-                                    h3.cardtext= element.Beschreibung
-                                    p= element.Größe
-                                    div.typ 
-                                        p.typtext= element.Typ
+                                h1= element.Name
+                                    //- h3.cardtext= element.Beschreibung
+                                    //- p= element.Größe
+                                    //- div.typ 
+                                    //-     p.typtext= element.Typ
