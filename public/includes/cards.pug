@@ -164,16 +164,17 @@ block cards
         ]  
 
 
-    div.pokedex
-        div.container
-            each element in data
-                div.card
-                    img(src= element.Bild, alt="")
-                    table 
-                        tr 
-                            th 
-                                p= element.Nr
-                                h1= element.Name
+    
+    div.container
+        each element in data
+            div.card
+                img(src= element.Bild, alt="")
+                table 
+                    tr 
+                        th 
+                            p= element.Nr
+                            h1
+                                a(href="")= element.Name
                                     //- h3.cardtext= element.Beschreibung
                                     //- p= element.Größe
                                     //- div.typ 
