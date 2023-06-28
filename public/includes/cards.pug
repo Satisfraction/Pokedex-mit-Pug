@@ -164,7 +164,24 @@ block cards
         ]  
 
 
-    
+    //- standard anzeige anfang...
+    //- div.container
+    //-     each element in data
+    //-         div.card
+    //-             img(src= element.Bild, alt="")
+    //-             table 
+    //-                 tr 
+    //-                     th 
+    //-                         p= element.Nr
+    //-                         h1
+    //-                             a(href="")= element.Name
+                                //- standardanzeige ende....
+                                    //- h3.cardtext= element.Beschreibung
+                                    //- p= element.Größe
+                                    //- div.typ 
+                                    //-     p.typtext= element.Typ
+
+
     div.container
         each element in data
             div.card
@@ -174,8 +191,4 @@ block cards
                         th 
                             p= element.Nr
                             h1
-                                a(href="")= element.Name
-                                    //- h3.cardtext= element.Beschreibung
-                                    //- p= element.Größe
-                                    //- div.typ 
-                                    //-     p.typtext= element.Typ
+                                a(href=`pokemon.html/${element.Nr}`)= element.Name
