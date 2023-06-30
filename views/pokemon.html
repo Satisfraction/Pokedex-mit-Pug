@@ -3,9 +3,45 @@
   <head>
     <title>Pokemon Details</title>
     <link rel="stylesheet" href="../public/css/style.css">
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f1f1f1;
+      }
+
+      .pokemon-details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: linear-gradient(60deg, #869496 0%, #1957b2 100%);
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        border: 4px solid goldenrod;
+      }
+
+      .pokemon-image2 {
+        width: 350px;
+        height: 350px;
+        object-fit: cover;
+        margin-bottom: 10px;
+      }
+
+      .pokemon-number,
+      .pokemon-name,
+      .pokemon-type,
+      .pokemon-description,
+      .pokemon-height {
+        margin: 5px 0;
+      }
+    </style>
   </head>
   <body>
-    <div class="pokemon-details"><img class="pokemon-image2" alt="Pokemon Image">
+    <div class="pokemon-details">
+      <img class="pokemon-image2" alt="Pokemon Image" src="">
       <p class="pokemon-number"></p>
       <p class="pokemon-name"></p>
       <p class="pokemon-type"></p>
