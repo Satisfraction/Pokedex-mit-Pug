@@ -1,0 +1,45 @@
+doctype html
+html
+  head
+    title Pokemon Details
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    .pokemon-details
+      img.pokemon-image2(alt="Pokemon Image")
+      p.pokemon-number
+      p.pokemon-name
+      p.pokemon-type
+      p.pokemon-description
+      p.pokemon-height
+
+    button(onclick="goBack()") Go Back
+
+    script.
+      function getQueryParameter(name) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(name);
+      }
+
+      const pokemonName = getQueryParameter('name');
+
+      fetch('/js/Pokemon.json')
+        .then(response => response.json())
+        .then(data => {
+          const pokemon = data.find(p => p.Name === pokemonName);
+          if (pokemon) {
+            document.querySelector('.pokemon-image2').src = pokemon.Bild;
+            document.querySelector('.pokemon-number').textContent = `Nr: ${pokemon.Nr}`;
+            document.querySelector('.pokemon-name').textContent = pokemon.Name;
+            document.querySelector('.pokemon-type').textContent = `Type: ${pokemon.Typ}`;
+            document.querySelector('.pokemon-description').textContent = pokemon.Beschreibung;
+            document.querySelector('.pokemon-height').textContent = `Height: ${pokemon.Größe}`;
+          } else {
+            console.log('Pokemon not found');
+          }
+        })
+        .catch(error => console.log(error));
+
+      function goBack() {
+        history.pushState({}, '', 'index.html');
+        window.location.reload();
+      }
